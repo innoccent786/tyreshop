@@ -40,7 +40,7 @@ app.use('/auth',authRoute)
 //server create/start
 app.get('/',(req,res)=>{
     console.log(path.resolve(__dirname,'client','build'))
-    app.use(express.static(path.resolve(__dirname,'client,'build')));
+    app.use(express.static(path.resolve(__dirname,'client','build')));
     res.sendFile(path.resolve(__dirname,'client','build','index.html'))
 })
 
