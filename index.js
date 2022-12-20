@@ -40,10 +40,10 @@ app.use('/auth',authRoute)
 //server create/start
 
 
-const server=process.env.SERVER=='http'? http.createServer(app):https.createServer({
-    key: fs.readFileSync('key.pem'),
-    cert: fs.readFileSync('cert.pem')
-},app);
-server.listen(process.env.PORT,()=>{
+// const server=process.env.SERVER=='http'? http.createServer(app):https.createServer({
+//     key: fs.readFileSync('key.pem'),
+//     cert: fs.readFileSync('cert.pem')
+// },app);
+app.listen(process.env.PORT,()=>{
     console.log("server is listening on port"+process.env.PORT)
 })
