@@ -35,7 +35,7 @@ app.use(cookieParser());
 app.use(express.static('public'))
 app.use(Upload.single('file'));
 app.use(cors({
-    origin:["http://localhost:3000","*"],
+    origin:["http://localhost:3000","https://elevenstar.sofabespoke.co.uk"],
     credentials:true
 }))
 
