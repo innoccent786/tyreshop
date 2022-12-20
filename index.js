@@ -38,10 +38,9 @@ app.use('/products',productRoute)
 app.use('/auth',authRoute)
 
 //server create/start
-app.get('/',(req,res)=>{
-    console.log(path.resolve(__dirname,'client','build'))
-    app.use(express.static(path.resolve(__dirname,'client','build')));
-    res.sendFile(path.resolve(__dirname,'client','build','index.html'))
+app.get('/tyres',(req,res)=>{
+    app.use(express.static(path.join(__dirname,'client','build')));
+    res.sendFile(path.join(__dirname,'client','build','index.html'))
 })
 
 const server=process.env.SERVER=='http'? http.createServer(app):https.createServer({
