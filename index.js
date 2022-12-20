@@ -18,21 +18,16 @@ const app=express();
 
 
 //middlewares
-
-app.use(bodyParser.urlencoded({extended:false}));
-app.use(bodyParser.json());
-app.use(cookieParser());
-
-app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-next();
-});
-app.use(express.static('public'))
-app.use(Upload.single('file'));
 app.use(cors({
     origin:"*",
     credentials:true
 }))
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(express.static('public'))
+app.use(Upload.single('file'));
+
 
 //routes
 
@@ -43,10 +38,7 @@ app.use('/products',productRoute)
 app.use('/auth',authRoute)
 
 //server create/start
-app.get('/tyres',(req,res)=>{
-    app.use(express.static(path.join(__dirname,'client','build')));
-    res.sendFile(path.join(__dirname,'client','build','index.html'))
-})
+
 
 const server=process.env.SERVER=='http'? http.createServer(app):https.createServer({
     key: fs.readFileSync('key.pem'),
