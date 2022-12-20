@@ -26,12 +26,12 @@ app.use(cookieParser());
 //  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
 //  next();
 // })
-app.use(function (req, res, next) {
-res.setHeader('Access-Control-Allow-Origin', 'https://elevenstar.sofabespoke.co.uk');
-res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-res.setHeader('Access-Control-Allow-Credentials', true);
-next();
-});
+// app.use(function (req, res, next) {
+// res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+// res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+// res.setHeader('Access-Control-Allow-Credentials', true);
+// next();
+// });
 app.use(express.static('public'))
 app.use(Upload.single('file'));
 app.use(cors({
