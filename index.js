@@ -18,6 +18,11 @@ const app=express();
 
 
 //middlewares
+app.use(function (req,res,next){
+    res.header('Access-Control-Allow-Origin','*')
+    
+})
+
 app.use(cors({
     origin:"http://localhost:3000",
     credentials:true
