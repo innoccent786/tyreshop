@@ -39,9 +39,9 @@ app.use('/auth',authRoute)
 
 //server create/start
 app.get('/',(req,res)=>{
-    console.log(path.join(__dirname,'build'))
-    app.use(express.static(path.join(__dirname,'build')));
-    res.sendFile(path.join(__dirname,'build','index.html'))
+    console.log(path.resolve(__dirname,'client','build'))
+    app.use(express.static(path.resolve(__dirname,'client,'build')));
+    res.sendFile(path.resolve(__dirname,'client','build','index.html'))
 })
 
 const server=process.env.SERVER=='http'? http.createServer(app):https.createServer({
