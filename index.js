@@ -19,7 +19,7 @@ const app=express();
 
 //middlewares
 app.use(cors({
-    origin:["http://localhost:3000","https://elevenstar.sofabespoke.co.uk"],
+    origin:"http://localhost:3000",
     credentials:true
 }))
 app.use(bodyParser.urlencoded({extended:false}));
