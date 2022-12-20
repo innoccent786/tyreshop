@@ -27,7 +27,7 @@ app.use(cookieParser());
 //  next();
 // })
 app.use(function (req, res, next) {
-res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8888');
+res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
 res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
 res.setHeader('Access-Control-Allow-Credentials', true);
 next();
@@ -35,7 +35,7 @@ next();
 app.use(express.static('public'))
 app.use(Upload.single('file'));
 app.use(cors({
-    origin:'*',
+    origin:'http://localhost:3000',
     credentials:true
 }))
 
