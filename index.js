@@ -24,11 +24,12 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use((req,res,next)=>{
  res.setHeader('Access-Control-Allow-Origin', '*');
+ next();
 })
 app.use(express.static('public'))
 app.use(Upload.single('file'));
 app.use(cors({
-    origin:'*',
+    origin:'http://localhost:3000',
     credentials:true
 }))
 
