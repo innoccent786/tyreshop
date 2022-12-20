@@ -22,23 +22,17 @@ const app=express();
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 app.use(cookieParser());
-// app.use((req,res,next)=>{
-//  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-//  next();
-// })
+
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
-// res.setHeader('Access-Control-Allow-Origin', '*');
-// res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-// res.setHeader('Access-Control-Allow-Credentials', true);
 next();
 });
 app.use(express.static('public'))
 app.use(Upload.single('file'));
-// app.use(cors({
-//     origin:["*","http://localhost:3000","https://elevenstar.sofabespoke.co.uk","https://elevenstar.sofabespoke.co.uk/index.html"],
-//     credentials:true
-// }))
+app.use(cors({
+    origin:"*",
+    credentials:true
+}))
 
 //routes
 
