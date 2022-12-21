@@ -19,7 +19,7 @@ const path=require('path')
 
 //middlewares
 app.use(cors({
-       origin:['https://elevenstar.sofabespoke.co.uk/index.html',"https://elevenstar.sofabespoke.co.uk/",'https://elevenstar.sofabespoke.co.uk','http://localhost:3000'],
+       origin:["https://elevenstar.sofabespoke.co.uk/index.html","https://elevenstar.sofabespoke.co.uk/",'https://elevenstar.sofabespoke.co.uk','http://localhost:3000'],
        credentials: true
 }))
 
