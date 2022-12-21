@@ -4,7 +4,7 @@ const app=express();
 
 //middlewares
 app.use(function (req,res,next){
-    res.header('Access-Control-Allow-Origin',['https://elevenstar.sofabespoke.co.uk','http://localhost:3000'])
+    res.header('Access-Control-Allow-Origin','http://localhost:3000')
     
 })
 
@@ -14,6 +14,11 @@ const config=require('./config/config').mongoose
 const Upload=require('./upload/upload')
 const cookieParser=require('cookie-parser');
 const cors=require('cors');
+
+app.use(cors({
+    origin:'http://localhost:3000',
+    credentials:true
+}))
 const http=require('http')
 const https=require('https');
 const fs=require('fs')
