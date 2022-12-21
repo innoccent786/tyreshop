@@ -5,7 +5,6 @@ const app=express();
 //middlewares
 app.use(function (req,res,next){
        res.setHeader('Access-Control-Allow-Origin', 'https://elevenstar.sofabespoke.co.uk');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
     res.setHeader('Access-Control-Allow-Credentials', true); // If needed
 
     next();
