@@ -1,15 +1,5 @@
 const express=require('express');
 const app=express();
-
-
-//middlewares
-app.use(function (req,res,next){
-       res.setHeader('Access-Control-Allow-Origin', 'https://elevenstar.sofabespoke.co.uk');
-    res.setHeader('Access-Control-Allow-Credentials', true); // If needed
-
-    next();
-})
-
 const bodyParser=require('body-parser');
 const dotenv=require('dotenv').config();
 const config=require('./config/config').mongoose
@@ -27,6 +17,11 @@ const productRoute=require('./route/product.routes')
 const authRoute=require('./route/auth.routes')
 const path=require('path')
 
+//middlewares
+app.use(cors({
+       origin:['https://elevenstar.sofabespoke.co.uk/index.html','https://elevenstar.sofabespoke.co.uk/','https://elevenstar.sofabespoke.co.uk','http://localhost:3000'],
+       credentials: true
+}))
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
