@@ -1,6 +1,10 @@
 const jwt=require('jsonwebtoken')
 const User=require('../models/user.model.js')
 const authMiddleware={ 
+    setHeadersCors: async (req,res,next)=>{
+        res.set('Access-Control-Allow-Origin', 'https://elevenstar.sofabespoke.co.uk')
+       next();
+    },
     createJWT:async (req,res)=>{
     const token=jwt.sign({role:req.role,user_id:req.userId},process.env.JWT_SECRET,{expiresIn:'2h'}); 
     const user=await User.findOneAndUpdate({_id:req.userId},{access_token:token});   
