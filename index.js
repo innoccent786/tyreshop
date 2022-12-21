@@ -4,7 +4,10 @@ const app=express();
 
 //middlewares
 app.use(function (req,res,next){
-     res.setHeader('Access-Control-Allow-Origin', "https://elevenstar.sofabespoke.co.uk");
+       res.setHeader('Access-Control-Allow-Origin', 'https://elevenstar.sofabespoke.co.uk');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
+    res.setHeader('Access-Control-Allow-Credentials', true); // If needed
+
     next();
 })
 
@@ -15,10 +18,6 @@ const Upload=require('./upload/upload')
 const cookieParser=require('cookie-parser');
 const cors=require('cors');
 
-app.use(cors({
-    origin:"https://elevenstar.sofabespoke.co.uk",
-    credentials:true
-}))
 const http=require('http')
 const https=require('https');
 const fs=require('fs')
