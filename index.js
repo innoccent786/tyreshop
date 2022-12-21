@@ -19,14 +19,10 @@ const app=express();
 
 //middlewares
 app.use(function (req,res,next){
-    res.header('Access-Control-Allow-Origin','https://elevenstar.sofabespoke.co.uk')
+    res.header('Access-Control-Allow-Origin',['https://elevenstar.sofabespoke.co.uk','http://localhost:3000'])
     
 })
 
-app.use(cors({
-    origin:"https://elevenstar.sofabespoke.co.uk",
-    credentials:true
-}))
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 app.use(cookieParser());
