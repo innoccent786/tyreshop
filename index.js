@@ -18,6 +18,10 @@ const authRoute=require('./route/auth.routes')
 const path=require('path')
 
 //middlewares
+app.use(function (req,res,next){
+ res.set('Access-Control-Allow-Origin', 'https://elevenstar.sofabespoke.co.uk')
+       next();
+})
 app.use(cors({
        origin:["https://elevenstar.sofabespoke.co.uk/index.html","https://elevenstar.sofabespoke.co.uk/",'https://elevenstar.sofabespoke.co.uk','http://localhost:3000'],
        credentials: true
