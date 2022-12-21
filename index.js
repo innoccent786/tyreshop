@@ -19,7 +19,7 @@ const path=require('path')
 
 //middlewares
 app.use(function (req,res,next){
- res.setHeader('Access-Control-Allow-Origin',"https://elevenstar.sofabespoke.co.uk")
+ res.setHeader('Access-Control-Allow-Origin','https://elevenstar.sofabespoke.co.uk')
  res.setHeader('Access-Control-Allow-Credentials', 'true')
        next();
 })
