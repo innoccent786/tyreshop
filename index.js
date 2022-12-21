@@ -4,7 +4,7 @@ const app=express();
 
 //middlewares
 app.use(function (req,res,next){
-    res.header('Access-Control-Allow-Origin','https://elevenstar.sofabespoke.co.uk')
+     res.setHeader('Access-Control-Allow-Origin', "https://elevenstar.sofabespoke.co.uk");
     next();
 })
 
@@ -16,7 +16,7 @@ const cookieParser=require('cookie-parser');
 const cors=require('cors');
 
 app.use(cors({
-    origin:'https://elevenstar.sofabespoke.co.uk',
+    origin:"https://elevenstar.sofabespoke.co.uk",
     credentials:true
 }))
 const http=require('http')
