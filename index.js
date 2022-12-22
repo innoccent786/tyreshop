@@ -21,11 +21,14 @@ const path=require('path')
 app.use(function (req,res,next){
  res.setHeader('Access-Control-Allow-Origin','https://elevenstar.sofabespoke.co.uk')
  res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers,access_token, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers")
- res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+ res.setHeader("Access-Control-Allow-Methods", "GET,DELETE,HEAD,OPTIONS,POST,PUT");
  res.setHeader('Access-Control-Allow-Credentials', 'true')
        next();
 })
-
+app.use(cors({
+origin:'*',
+credentials:true 
+})
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
